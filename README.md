@@ -96,15 +96,6 @@ responsabilidades:
 
 ---
 
-## Como usar
-
-1. Suba os três arquivos (`index.html`, `style.css`, `script.js`) para
-   um repositório no GitHub.
-2. Ative o GitHub Pages apontando para a raiz desse repositório (ou para
-   a branch desejada).
-3. Acesse a URL gerada pelo GitHub Pages — não é necessário nenhum passo
-   de build.
-
 Para testar a demonstração de XSS localmente: publique um recado normal
 no modo seguro, depois alterne para o modo vulnerável e publique algo
 como `<img src=x onerror="alert('XSS')">` para observar a diferença.
