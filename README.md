@@ -1,6 +1,8 @@
 [README (1).md](https://github.com/user-attachments/files/29072479/README.1.md)
 # MURAL_TÓXICO 🧪
 
+Link: https://samuelarthuralmeidadejesus.github.io/mural-toxico/
+
 Um mural de recados estático, com visual hacker/cybersecurity, criado como
 **laboratório educacional de Stored XSS** (Cross-Site Scripting persistido).
 
