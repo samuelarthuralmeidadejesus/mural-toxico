@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MURAL_TÓXICO :: laboratório de Stored XSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- overlay de scanlines puramente decorativo -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="terminal-bar">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="terminal-path">root@mural-toxico:~$</span>
+    </div>
+    <h1 class="glitch" data-text="MURAL_TÓXICO">MURAL_TÓXICO<span class="cursor">_</span></h1>
+    <p class="subtitle">// painel de recados anônimos — laboratório de Stored XSS</p>
+  </header>
+
+  <main class="container">
+
+    <section class="warning-banner" role="alert">
+      <span class="warning-icon">⚠</span>
+      <div>
+        <strong>AVISO EDUCACIONAL.</strong>
+        Este site é um laboratório de segurança ofensiva/defensiva sobre <strong>Stored XSS</strong>.
+        Tudo roda no seu navegador, sem servidor e sem envio de dados a terceiros.
+        Não publique informações reais e não utilize estas técnicas fora de ambientes que você tem autorização para testar.
+      </div>
+    </section>
+
+    <section class="mode-panel">
+      <div class="mode-info">
+        <span class="mode-label">MODO ATIVO</span>
+        <div id="modeBadge" class="mode-badge">SEGURO :: textContent</div>
+      </div>
+      <button id="toggleModeBtn" class="btn btn-ghost">↺ Alternar modo</button>
+    </section>
+
+    <section class="composer">
+      <label for="recadoInput" class="composer-label">&gt; escrever_recado</label>
+      <textarea id="recadoInput" rows="3" placeholder="Digite seu recado aqui..."></textarea>
+      <p class="hint">
+        Dica de laboratório: no <strong>modo vulnerável</strong>, tente algo como
+        <code>&lt;img src=x onerror="alert('XSS')"&gt;</code> e observe a diferença ao comparar com o modo seguro.
+      </p>
+      <div class="composer-actions">
+        <button id="publishBtn" class="btn btn-primary">Publicar</button>
+        <button id="clearBtn" class="btn btn-danger">Limpar tudo</button>
+      </div>
+    </section>
+
+    <section class="mural" id="mural" aria-live="polite">
+      <!-- os cartões de recado são inseridos aqui via script.js -->
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    Projeto educacional sobre segurança web — sem coleta de dados, sem backend, 100% local (localStorage).
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
